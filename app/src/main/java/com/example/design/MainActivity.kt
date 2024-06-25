@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
@@ -45,59 +46,73 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
-        Column(
-            modifier = modifier
-                .fillMaxSize()
-                .padding(horizontal = 10.dp, vertical = 270.dp)
-                .border(3.dp, Color.Black),
-            horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.Center
 
-        ) {
+    Column {
+        /* modifier = modifier
+            .fillMaxSize()
+            .padding(horizontal = 10.dp, vertical = 270.dp)
+            .border(3.dp, Color.Black),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center*/
+        Box(
+            contentAlignment = Alignment.Center,
+            modifier = Modifier
+            .fillMaxSize()
+            .padding(horizontal = 10.dp, vertical = 270.dp)
+            .border(3.dp, Color.Black)) {
+
 
             Text(
 
                 modifier = Modifier
-                    .padding( bottom = 25.dp)
+                    .padding(bottom = 60.dp)
                     .background(Color.Magenta)
                     .width(350.dp)
                     .height(50.dp)
+                    .align(Alignment.Center)
                     .wrapContentHeight(),
                 text = "",
-                )
+            )
 
             Text(
                 modifier = Modifier
-                    .padding(  bottom = 25.dp)
+                    .padding(top  = 25.dp)
                     .background(Color.Red)
+                    .align(Alignment.TopCenter)
                     .width(350.dp)
                     .height(50.dp)
                     .wrapContentHeight(),
                 text = "",
-                )
+            )
             Text(
                 modifier = Modifier
-                    .padding(  bottom = 25.dp)
+                    .padding(bottom = 90.dp)
                     .background(Color.Yellow)
+                    .align(Alignment.BottomCenter)
                     .width(350.dp)
                     .height(50.dp)
                     .wrapContentHeight(),
                 text = "",
-                )
-            Button(onClick = {},
+            )
+            Button(
+                onClick = {},
                 shape = RectangleShape,
                 modifier = Modifier
+                    .padding(bottom = 25.dp)
+                    .align(Alignment.BottomCenter)
                     .width(350.dp)
                     .height(50.dp)
                     .wrapContentHeight(),
                 colors = ButtonDefaults.buttonColors(
-                    containerColor = Color(0xff004D40))
-            ){
+                    containerColor = Color(0xff004D40)
+                )
+            ) {
                 Text("Button", fontSize = 25.sp)
 
             }
         }
     }
+}
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
