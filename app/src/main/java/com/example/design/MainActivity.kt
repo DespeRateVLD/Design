@@ -48,12 +48,7 @@ class MainActivity : ComponentActivity() {
 fun Greeting(name: String, modifier: Modifier = Modifier) {
 
     Column {
-        /* modifier = modifier
-            .fillMaxSize()
-            .padding(horizontal = 10.dp, vertical = 270.dp)
-            .border(3.dp, Color.Black),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center*/
+
         Box(
             contentAlignment = Alignment.Center,
             modifier = Modifier
